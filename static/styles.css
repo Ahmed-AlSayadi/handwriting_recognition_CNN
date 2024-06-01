@@ -1,0 +1,162 @@
+
+body {
+  background-image: linear-gradient(to right, #FBF3ED , #DBFAE0);
+}
+
+
+#img-home {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 450px;
+  height: 100px;
+}
+
+.upload-icon {
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+}
+
+table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.upload-container {
+  background-color: #B2DDF5;
+  text-align: left;
+  padding: 20px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  margin: 65px;
+}
+
+.upload-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+}
+
+.arr-icon {
+  width: 150px;
+  height: 80px;
+  margin: 0 20px;
+}
+
+.predictions-container {
+  display: flex;
+  background-color: #B2DDF5;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 50px;
+  flex-wrap: wrap;
+  width: 45%;
+  flex-direction: column;
+}
+
+.pred-img {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 50px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centered-image {
+  margin: 10px;
+}
+
+.predictions {
+  padding: 15px;
+  width: 400px;
+  text-align: left;
+  margin: 0 20px;
+  box-sizing: border-box;
+}
+
+  td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    background-color: #f2f2f2;
+    width: 100%;
+  }
+
+.main-btn {
+  width: 100%;
+  align-items: center;
+  margin-left: 10px;
+}
+
+  .again-btn,
+  .home-btn,
+  .logout-btn {
+    width: calc(31% - 5px);
+    padding: 10px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+    margin-bottom: 15px;
+  }
+
+.again-btn {
+  background-color: #EEB197;
+}
+
+.home-btn {
+  background-color: #BF87B6;
+}
+
+.logout-btn {
+  background-color: #A28BE0;
+}
+
+  .again-btn:hover,
+  .home-btn:hover,
+  .logout-btn:hover {
+    background-color: #45a049;
+  }
+
+@media screen and (max-width: 800px) {
+  .upload-container, .arr-icon, .predictions-container {
+    width: 100%; /* The width is 100% when the viewport is 800px or smaller */
+    display: block; /* Change the display property to block to stack elements vertically */
+  }
+}

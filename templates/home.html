@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+
+</head>
+<body>
+
+<div class="header" style="background-color: #2C6DC4; padding: 7px; display: flex; align-items: center; justify-content: center;">
+    <img src="{{ url_for('send_image', filename='icon1.png') }}" style="width: 100px;">
+    <img src="{{ url_for('send_image', filename='icon2.png') }}"  style="width: 50%;">
+</div>
+
+<br><br>
+
+	<div class="container">
+	  <img src="{{ url_for('send_image', filename='icon1.png') }}" class="img">
+	</div>
+
+	<h1 class="login-heading">Welcome to Our Handwriting Text Recognition System</h1>
+    <h2 class="login-heading">You are logged in!</h2>
+
+	<div class="HomeButtons">
+		<a ><button class="startButtonn" onclick="redirectToHome()">Start The System</button></a> <br>
+	</div>
+
+	<div class = "HomeButtons"  >
+		<a href="{{ url_for('logout') }}"><button class="logoutButton">Logout</button></a>
+    </div>
+	
+<div class="footer" style="background-color: #2C6DC4; padding: 10px; text-align: center;">
+  <h2 style="color: white; font-size: 18px;">Handwriting Text Recognition System</h2>
+</div>
+
+<script>
+    function redirectToHome() {
+        window.location.href = "http://localhost:5000/";
+    }
+</script>
+</body>
+</html>

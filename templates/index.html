@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Handwriting OCR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body  src="{{ url_for('send_image', filename='img.png') }}" >
+
+<div class="header" style="background-color: #2C6DC4; padding: 7px; display: flex; align-items: center; justify-content: center;">
+    <img src="{{ url_for('send_image', filename='icon1.png') }}" style="width: 100px;">
+    <img src="{{ url_for('send_image', filename='icon2.png') }}"  style="width: 50%;">
+</div>
+
+
+<div class="container">
+    <div class="main-content">
+        <!-- Upload Container -->
+        <div id="upload-container" class="upload-container" >
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="file" style="display: none;">
+                <label for="file">
+                    <img src="{{ url_for('send_image', filename='upload.png') }}" class="upload-icon">
+                </label>
+                <br>
+                <input type="submit" value="Upload" class="upload-btn" id="upload-btn">
+            </form>
+        </div> <br><br><br>
+		<!-- Prediction Container -->
+{% if predict1 %}
+
+	<img src="{{ url_for('send_image', filename='arr.png') }}" class="arr-icon">
+	<div class="predictions-container">
+		<div  class="pred-img" >
+			<img src="{{ url_for('send_image', filename=image_name) }}" class="img-fluid centered-image" width="80%">
+		</div>
+		<div class="predictions">
+			<h2>Recognized Text:</h2>
+			<table>
+				<tr>
+					<td>{{ predict1 }}</td>
+				</tr>
+			</table>
+		</div>
+		<div  class = "main-btn" >
+			<button class = "again-btn" onclick="redirectToUpload()">Try Another Image</button>
+			<button class = "home-btn" onclick="redirectToHome()">Home Page</button>
+			<button class = "logout-btn" onclick="redirectToLogout()">Logout</button>
+		</div>
+	</div>
+{% endif %}
+		
+    </div>
+</div>
+
+
+<div class="footer" style="background-color: #2C6DC4; padding: 10px; text-align: center;">
+  <h2 style="color: white; font-size: 18px;">Handwriting Text Recognition System</h2>
+</div>
+</body>
+</html>
+</script>
+
+  <script>
+    $("#file-picker").change(function(){
+      var input = document.getElementById('file-picker');
+      for (var i=0; i<input.files.length; i++){
+        var ext = input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase();
+        if ((ext == 'jpg') || (ext == 'png')){
+          $("#msg").text("Files are supported");
+        } else {
+          $("#msg").text("Files are NOT supported");
+          document.getElementById("file-picker").value = "";
+        }
+      }
+    });
+  </script>
+
+<script>
+  function redirectToUpload() {
+    window.location.href = "http://localhost:5000";
+  }
+  function redirectToHome() {
+    window.location.href = "http://localhost:5000/main";
+  }
+  function redirectToLogout() {
+    window.location.href = "http://localhost:5000/login";
+  }
+</script>
+
+</body>
+</html>

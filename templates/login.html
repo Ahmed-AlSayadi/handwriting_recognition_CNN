@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form-styles.css') }}">
+
+</head>
+<body>
+
+<div class="header" style="background-color: #2C6DC4; padding: 7px; display: flex; align-items: center; justify-content: center;">
+    <img src="{{ url_for('send_image', filename='icon1.png') }}" style="width: 100px;">
+    <img src="{{ url_for('send_image', filename='icon2.png') }}"  style="width: 50%;">
+</div>
+
+<br><br><br><br><br><br>
+
+
+  <div class="form-container">
+    <div class="form-title">
+      Login Form
+    </div>
+	<form class="login-form" method="POST" action="{{ url_for('login') }}">
+      <div class="form-group">
+        <input type="text" placeholder="Username" name="username" id="username" required>
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Password" name="password" id="password" required>
+      </div>
+      <div class="form-group-submit">
+        <input type="submit" value="Login">
+      </div>
+	{% if message %}
+	<p class="login-message">{{ message }}</p>
+	{% endif %}
+    </form>
+    <div class="login-link">
+      <p>Don't have an account? <a href="{{ url_for('register') }}" onclick="showSignupForm()">Sign Up</a></p>
+    </div>
+  </div>
+
+
+<br><br><br>
+<br><br><br>
+
+
+<div class="footer" style="background-color: #2C6DC4; padding: 10px; text-align: center;">
+  <h2 style="color: white; font-size: 18px;">Handwriting Text Recognition System</h2>
+</div>
+
+</body>
+</html>

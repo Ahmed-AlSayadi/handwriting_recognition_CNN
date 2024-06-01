@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+
+<div class="header" style="background-color: #2C6DC4; padding: 7px; display: flex; align-items: center; justify-content: center;">
+    <img src="{{ url_for('send_image', filename='icon1.png') }}" style="width: 100px;">
+    <img src="{{ url_for('send_image', filename='icon2.png') }}"  style="width: 50%;">
+</div>
+<div class = "main-cont" >
+    <img src="{{ url_for('send_image', filename='logo.png') }}" class="logo">
+	<div class = "MainPageButtons" >
+		<h3> Please Sign up or Log in </h3>
+		<a href="{{ url_for('register') }}"><button class="register-btn">Register</button></a>
+		<a href="{{ url_for('login') }}"><button class="login-btn">Login</button></a>
+    </div>
+</div>
+<div class="footer" style="background-color: #2C6DC4; padding: 10px; text-align: center;">
+  <h2 style="color: white; font-size: 18px;">Handwriting Text Recognition System</h2>
+</div>
+</body>
+</html>
